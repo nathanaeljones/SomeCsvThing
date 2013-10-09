@@ -9,7 +9,6 @@ namespace Tests
 {
     public class FirstTest
     {
-
         [Test]
         public void ParseCsv()
         {

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace NathanaelInterview
+namespace NathanaelInterview.Internal
 {
     public class ParseResult
     {

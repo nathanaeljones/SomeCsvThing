@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using NathanaelInterview;
+using NathanaelInterview.Internal;
 
 namespace Tests
 {
