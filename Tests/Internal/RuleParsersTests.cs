@@ -128,7 +128,7 @@ namespace Tests
             AssertDeep.AreEqual(result, new FileParseResult()
             {
                 Length = tokens.Length,
-                Values = new [] { new [] {"foo", "bar"}, new string[] {"baz"}, new string[] {""}}
+                Values = new [] { new [] {"foo", "bar"}, new string[] {"baz"}}
             });
         }
     }

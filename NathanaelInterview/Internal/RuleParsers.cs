@@ -117,7 +117,7 @@ namespace NathanaelInterview.Internal
             position += firstRecord.Length;
             results.Add(firstRecord.Values);
 
-            while (tokens.Length > position + 1 
+            while (tokens.Length > position + 2 
                 && tokens[position].Type == TokenType.CR 
                 && tokens[position + 1].Type == TokenType.LF)
             {
