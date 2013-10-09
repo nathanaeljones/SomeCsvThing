@@ -26,9 +26,11 @@ namespace Tests
 
             var result = new RuleParsers().ParseField(tokens);
 
-            Assert.NotNull(result);
-            Assert.AreEqual(result.Length, 3);
-            Assert.AreEqual(result.Value, "foo");
+            AssertDeep.AreEqual(result, new FieldParseResult()
+            {
+                Length = 3,
+                Value = "foo"
+            });
         }
 
         [Test]
@@ -38,9 +40,11 @@ namespace Tests
 
             var result = new RuleParsers().ParseField(tokens);
 
-            Assert.NotNull(result);
-            Assert.AreEqual(3, result.Length);
-            Assert.AreEqual("foo", result.Value);
+            AssertDeep.AreEqual(result, new FieldParseResult()
+            {
+                Length = 3,
+                Value = "foo"
+            });
         }
         
         [Test]
@@ -50,9 +54,11 @@ namespace Tests
 
             var result = new RuleParsers().ParseField(tokens);
 
-            Assert.NotNull(result);
-            Assert.AreEqual(result.Length, 5);
-            Assert.AreEqual(result.Value, "foo");
+            AssertDeep.AreEqual(result, new FieldParseResult()
+            {
+                Length = 5,
+                Value = "foo"
+            });
         }
 
         [Test]
@@ -62,9 +68,11 @@ namespace Tests
 
             var result = new RuleParsers().ParseField(tokens);
 
-            Assert.NotNull(result);
-            Assert.AreEqual(10, result.Length);
-            Assert.AreEqual("foo\",\r\n", result.Value);
+            AssertDeep.AreEqual(result, new FieldParseResult()
+            {
+                Length = 10,
+                Value = "foo\",\r\n"
+            });
         }
 
         [Test]
@@ -74,10 +82,11 @@ namespace Tests
 
             var result = new RuleParsers().ParseRecord(tokens);
 
-            Assert.NotNull(result);
-            Assert.AreEqual(0, result.Length);
-            Assert.AreEqual(1, result.Values.Length);
-            Assert.AreEqual("", result.Values[0]);
+            AssertDeep.AreEqual(result, new RecordParseResult()
+            {
+                Length = 0,
+                Values = new[] {""}
+            });
         }
 
         [Test]
@@ -87,12 +96,11 @@ namespace Tests
 
             var result = new RuleParsers().ParseRecord(tokens);
 
-            Assert.NotNull(result);
-            Assert.AreEqual(11, result.Length);
-            Assert.AreEqual(3, result.Values.Length);
-            Assert.AreEqual("foo", result.Values[0]);
-            Assert.AreEqual("bar,", result.Values[1]);
-            Assert.AreEqual("", result.Values[2]);
+            AssertDeep.AreEqual(result, new RecordParseResult()
+            {
+                Length = 11,
+                Values = new[] { "foo", "bar,", ""}
+            });
         }
 
         [Test]
@@ -102,11 +110,11 @@ namespace Tests
 
             var result = new RuleParsers().ParseFile(tokens);
 
-            Assert.NotNull(result);
-            Assert.AreEqual(0, result.Length);
-            Assert.AreEqual(1, result.Values.Length);
-            Assert.AreEqual(1, result.Values[0].Length);
-            Assert.AreEqual("", result.Values[0][0]);
+            AssertDeep.AreEqual(result, new FileParseResult()
+            {
+                Length = 0,
+                Values = new[] { new[] { "" } }
+            });
         }
 
         [Test]
@@ -116,14 +124,11 @@ namespace Tests
 
             var result = new RuleParsers().ParseFile(tokens);
 
-            Assert.NotNull(result);
-            Assert.AreEqual(tokens.Length, result.Length);
-            Assert.AreEqual(3, result.Values.Length);
-            Assert.AreEqual(2, result.Values[0].Length);
-            Assert.AreEqual(new []{"foo", "bar"}, result.Values[0]);
-            Assert.AreEqual(1, result.Values[1].Length);
-            Assert.AreEqual(new[] { "baz" }, result.Values[1]);
-            Assert.AreEqual(new[] { "" }, result.Values[2]);
+            AssertDeep.AreEqual(result, new FileParseResult()
+            {
+                Length = tokens.Length,
+                Values = new [] { new [] {"foo", "bar"}, new string[] {"baz"}, new string[] {""}}
+            });
         }
     }
 }

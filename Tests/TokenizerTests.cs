@@ -17,7 +17,7 @@ namespace Tests
 
             var result = new Tokenizer().Tokenize(input);
 
-            Assert.AreEqual(result, expectedOutput);
+            AssertDeep.AreEqual(result, expectedOutput);
         }
 
         [Test]
@@ -35,8 +35,7 @@ namespace Tests
 
             var result = new Tokenizer().Tokenize(input);
 
-            Assert.AreEqual(result, expectedOutput);
+            AssertDeep.AreEqual(result, expectedOutput);
         }
-    
     }
 }
