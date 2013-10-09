@@ -7,7 +7,7 @@ using NathanaelInterview;
 
 namespace Tests
 {
-    public class FirstTest
+    public class ParseCsvTests
     {
         [Test]
         public void ParseCsv()
