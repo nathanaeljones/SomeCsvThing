@@ -48,8 +48,6 @@
     <Compile Include="AssertDeep.cs" />
     <Compile Include="ParseCsvTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Internal\RuleParsersTests.cs" />
-    <Compile Include="Internal\TokenizerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

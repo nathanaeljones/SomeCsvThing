@@ -39,8 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Internal\ParseResult.cs" />
-    <Compile Include="Internal\RuleParsers.cs" />
     <Compile Include="Internal\Token.cs" />
     <Compile Include="Internal\Tokenizer.cs" />
     <Compile Include="ParseCsv.cs" />

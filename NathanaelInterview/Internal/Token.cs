@@ -2,16 +2,16 @@ namespace NathanaelInterview.Internal
 {
     public enum TokenType
     {
-        DQUOTE,
-        LF,
-        CR,
-        COMMA,
-        TEXTDATA
+        ESCAPED_FIELD,
+        ROW_SEP,
+        COL_SEP,
+        FIELD
     }
 
     public class Token
     {
         public TokenType Type;
-        public char Value;
+        public string Value;
+        public int Location;
     }
 }
